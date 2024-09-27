@@ -1,15 +1,35 @@
+//3a. array of strings
 let Tasks = [];
 
-//b Tasks.push(value);
+//3b. addTask function
 let addTask = (task) => {
     Tasks.push(task);
-    console.log(task + " had been added to my tasks.")
+    console.log(task + " has been added to my tasks.")
 }
 
+//3.c listAllTasks function
+let listAllTasks = () => {
+    Tasks.forEach((element) => {
+        console.log(element);
+    });
+}
 
+//3d. deleteTask function
+let deleteTask = (task) => {
+    let index = Tasks.indexOf(task);
+    
+    if(index > -1) {
+        Tasks.splice(index, 1);
+        console.log(task + " has been deleted from my tasks");
+    }else {
+        console.log(task + " not found");
+    }//didnt find in array
 
-//c Tasks.forEach(()=>{});
+    return Tasks.length;
+}
 
-
-//d let index = Tasks.indexOf(value);
-//d Tasks.splice(index,1);
+addTask("Task 1");
+addTask("Task 2");
+addTask("Task 3");
+listAllTasks();
+deleteTask("Task 2");
